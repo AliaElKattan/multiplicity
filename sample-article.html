@@ -14,21 +14,25 @@
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="stylesheet.css" rel="stylesheet">
 
-  <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet"> 
+  <!-- Include Handlebars.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+
+  <script src="/script.js"></script>
 
 </head>
 
 <body class="d-flex flex-column">
 
-
-  <!-- Header & Nav -->
-  <nav class="navbar navbar-expand-lg navbar-dark">
+ <!-- Header & Nav -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 
     <div class="d-flex flex-grow-1">
 
       <span class="w-100 d-block"><!-- hidden spacer to center brand on mobile --></span>
 
-      <a class="navbar-brand" href="#">
+      <a class="navbar-brand" href="/index.html">
         multiplicity
       </a>
 
@@ -56,24 +60,31 @@
   </nav>
 
 
-
-  <!-- Cover Page Content -->
+  <!-- Article -->
 
   <div id="page-content">
     <div class="container text-center">
       <div class="row justify-content-center">
 
+        <div class="col-md-10 article">
 
-        <div class="col-md-7">
+          <script id="article-template" type="text/x-handlebars-template">
 
-          <h1 class="mt-5">coming soon...</h1>
-          <p class="lead">global examinations of tech, youth, and our societies</p>
-          <a href="/sample-article.html"> sample article </a>
+            <h1 class="articeTitle"> {{article.title}}</h1>
+            <p class="byline">{{article.byline}}</p>
+            <p class="author">{{article.author}}</p> 
+            <p class="article-body">{{{article.body}}}</p>
+
+          </script>
+
+          <!--Article will be displayed here-->
+          <div class="article-placeholder"></div>
+
         </div>
+
       </div>
     </div>
   </div>
-
 
   <!-- Footer -->
 
